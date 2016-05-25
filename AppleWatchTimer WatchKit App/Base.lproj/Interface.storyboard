@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="20N-CY-skw">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--startTimerController-->
+        <scene sceneID="NKL-Wk-XHr">
+            <objects>
+                <controller identifier="startTimerController" animationDuration="1" id="i0q-7Z-8BP" customClass="StartTimerInterfaceController" customModule="AppleWatchTimer_WatchKit_Extension">
+                    <items>
+                        <group width="134" alignment="left" verticalAlignment="bottom" id="gy5-Sl-gdj">
+                            <items>
+                                <button width="45" height="45" alignment="left" backgroundImage="startcircle" id="YaR-3E-dJc">
+                                    <connections>
+                                        <action selector="startTimer" destination="i0q-7Z-8BP" id="fIS-9S-UHU"/>
+                                    </connections>
+                                </button>
+                                <button width="45" height="45" alignment="right" backgroundImage="stopcircle" id="4fo-TL-bHC">
+                                    <connections>
+                                        <action selector="stopTimer" destination="i0q-7Z-8BP" id="9pn-sQ-sd8"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="o9O-66-nK2">
+                            <items>
+                                <imageView width="20" height="20" alignment="center" id="cDv-rl-w1F"/>
+                                <imageView width="20" height="20" alignment="center" id="cDW-O6-SyA"/>
+                                <imageView width="20" height="20" alignment="center" id="cEk-pG-Cv6"/>
+                                <imageView width="20" height="20" alignment="center" id="uTY-nZ-sVZ"/>
+                                <imageView width="20" height="20" alignment="center" id="TTG-ii-BQh"/>
+                            </items>
+                        </group>
+                        <group width="1" height="24" alignment="left" id="c6q-7L-hMX">
+                            <items>
+                                <label alignment="left" text="Sec to end:" textAlignment="left" id="50I-WP-mJu">
+                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                </label>
+                                <label width="42" alignment="right" text="0" textAlignment="center" id="ZA3-Pi-EMG">
+                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                        <label width="1" height="45" alignment="center" verticalAlignment="center" text="0" textAlignment="center" id="jnQ-ue-hqO">
+                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="40"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="activeSetTimerLabel" destination="ZA3-Pi-EMG" id="EYr-t0-fxo"/>
+                        <outlet property="timerCircle1" destination="cDv-rl-w1F" id="ge5-H1-eyc"/>
+                        <outlet property="timerCircle2" destination="cDW-O6-SyA" id="8nZ-Pb-r7T"/>
+                        <outlet property="timerCircle3" destination="cEk-pG-Cv6" id="fCv-15-Gkn"/>
+                        <outlet property="timerCircle4" destination="uTY-nZ-sVZ" id="Ql3-Fp-ehA"/>
+                        <outlet property="timerCircle5" destination="TTG-ii-BQh" id="Tjm-JV-zdz"/>
+                        <outlet property="timerLabel" destination="jnQ-ue-hqO" id="Ky4-Gt-meC"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="267" y="128"/>
+        </scene>
+        <!--Set Timer Interface Controller-->
+        <scene sceneID="guc-Qy-kNA">
+            <objects>
+                <controller id="20N-CY-skw" customClass="SetTimerInterfaceController" customModule="AppleWatchTimer_WatchKit_Extension">
+                    <items>
+                        <button width="1" height="25" alignment="left" title="Timer" id="U6S-Sw-bMl">
+                            <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="myTimerButtonPressed" destination="20N-CY-skw" id="LEj-qg-S0s"/>
+                            </connections>
+                        </button>
+                        <separator alignment="left" id="KGo-LI-2bn">
+                            <color key="color" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <group width="1" alignment="left" id="4Bo-bm-oqZ">
+                            <items>
+                                <label alignment="left" text="Sets: " id="t8q-Fs-Ov7">
+                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <label alignment="right" text="0" id="gK0-cv-Mwd">
+                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                        <slider width="1" height="30" alignment="left" value="3" maximum="5" steps="5" id="e3O-IG-V6m">
+                            <color key="color" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="numberOfSetsSliderValueChanged:" destination="20N-CY-skw" id="S9g-HU-JQb"/>
+                            </connections>
+                        </slider>
+                        <separator alignment="left" id="im8-Nh-J5w">
+                            <color key="color" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <group width="1" alignment="left" id="fvb-Wz-D3q">
+                            <items>
+                                <label alignment="left" text="Set length:" id="xUn-Q9-82Y">
+                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <label alignment="right" text="30" id="T69-09-7qr">
+                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                        <slider width="1" height="30" alignment="left" verticalAlignment="center" value="30" maximum="60" steps="60" id="AQq-Dl-bjz">
+                            <color key="color" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="setLengthSliderValueChanged:" destination="20N-CY-skw" id="1uC-R1-c9p"/>
+                            </connections>
+                        </slider>
+                    </items>
+                    <connections>
+                        <outlet property="lengthOfSetsSlider" destination="AQq-Dl-bjz" id="HXY-Wz-UDj"/>
+                        <outlet property="myTimerButton" destination="U6S-Sw-bMl" id="vsh-Op-wdV"/>
+                        <outlet property="numberOfSetsLabel" destination="gK0-cv-Mwd" id="deu-5K-SdS"/>
+                        <outlet property="numberOfSetsSlider" destination="e3O-IG-V6m" id="4nv-bg-cMl"/>
+                        <outlet property="setLengthLabel" destination="T69-09-7qr" id="iZu-0I-A9n"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="68" y="137.5"/>
+        </scene>
+    </scenes>
+</document>
